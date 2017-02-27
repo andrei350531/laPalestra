@@ -1,0 +1,31 @@
+{
+  "name": "la-palestra",
+  "version": "0.0.1",
+  "description": "Fitness gym",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrei350531/laPalestra.git"
+  },
+  "author": "Koteiki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrei350531/laPalestra/issues"
+  },
+  "homepage": "https://github.com/andrei350531/laPalestra#readme",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-less": "^3.3.0",
+    "gulp-typescript": "^3.1.5",
+    "gulp-watch": "^4.3.11",
+    "tsd": "^0.6.5",
+    "tslint": "^4.5.0",
+    "typescript": "^2.2.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
