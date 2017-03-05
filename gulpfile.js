@@ -40,7 +40,7 @@ gulp.task("livereload", function() {
 compile less files
 */
 gulp.task("less", function() {
-    gulp.src("web/styles/styles.less")
+    gulp.src("web/styles/main.less")
     .pipe(less())
     .pipe(gulp.dest("web/styles"));
 });
