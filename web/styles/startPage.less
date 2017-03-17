@@ -1,0 +1,39 @@
+.startPage {
+    .flex;
+    .flex-row;
+    .flexAlignItems(stretch);
+    font-size: 1em;
+    height: 200px;
+    max-height: 200px;
+    color: white;
+
+    .logo {
+        font-size: 2em;
+        .flex;
+        .flex-column;
+        flex: 0 0 auto;
+        padding: 0 50px 0 0;
+    }
+
+    .header_container {
+        border: solid white;
+        border-width: 1px 0;
+        flex: 0 1 auto;
+        .flexAlignItems(center);
+    }
+
+    .contacts {
+        .flex;
+        .flex-column;
+        .flexAlignItems(center);
+        flex: 0 0 auto;
+        padding: 10px;
+        border: 1px solid white;
+        border-width: 0 0 0 1px;
+
+        .contactElement {
+            padding: 10px;
+            flex: 0 1 auto;
+        }
+    }
+}
