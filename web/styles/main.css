@@ -25,21 +25,24 @@
   display: flex;
   flex: 1 1 auto;
   box-sizing: border-box;
-  -moz-flex-direction: row;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -moz-align-items: stretch;
   -webkit-align-items: stretch;
   -ms-align-items: stretch;
   align-items: stretch;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
   font-size: 1em;
-  height: 200px;
-  max-height: 200px;
+  height: 400px;
   color: white;
 }
 .startPage .logo {
-  font-size: 2em;
+  font-size: 2.1em;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -51,12 +54,13 @@
   -ms-flex-direction: column;
   flex-direction: column;
   flex: 0 0 auto;
-  padding: 0 50px 0 0;
+  padding: 0 15px;
 }
 .startPage .header_container {
   border: solid white;
   border-width: 1px 0;
   flex: 0 1 auto;
+  min-height: 200px;
   -moz-align-items: center;
   -webkit-align-items: center;
   -ms-align-items: center;
@@ -77,6 +81,7 @@
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  font-size: 1.1em;
   flex: 0 0 auto;
   padding: 10px;
   border: 1px solid white;
@@ -85,6 +90,75 @@
 .startPage .contacts .contactElement {
   padding: 10px;
   flex: 0 1 auto;
+}
+.startPage .navigation {
+  flex: 0 1 auto;
+  position: relative;
+  margin-top: calc(4.5rem);
+}
+.startPage .navigation:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(-4.5rem);
+  left: calc(50%);
+  width: 1px;
+  height: calc(4.5rem);
+  background: #ffffff;
+}
+.startPage .navigation .list {
+  flex: 0 1 auto;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style: none;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.startPage .navigation .list .listItem {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 40px;
+  font-size: 1.1em;
+  width: 100%;
+  list-style-type: none;
+  text-transform: uppercase;
+  border-left: 1px solid white;
+}
+.startPage .navigation .list .listItem:last-of-type .listItem {
+  border-left: none;
+}
+.startPage .navigation .list .listItem:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+.startPage .navigation .list .link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.9em;
 }
 .backgroundClass {
   -moz-transform: scale(1);
@@ -142,7 +216,7 @@
 body,
 html {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
   font-size: 20px;
@@ -183,21 +257,24 @@ html {
   display: flex;
   flex: 1 1 auto;
   box-sizing: border-box;
-  -moz-flex-direction: row;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -moz-align-items: stretch;
   -webkit-align-items: stretch;
   -ms-align-items: stretch;
   align-items: stretch;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
   font-size: 1em;
-  height: 200px;
-  max-height: 200px;
+  height: 400px;
   color: white;
 }
 .mainContainer .header .logo {
-  font-size: 2em;
+  font-size: 2.1em;
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -209,12 +286,13 @@ html {
   -ms-flex-direction: column;
   flex-direction: column;
   flex: 0 0 auto;
-  padding: 0 50px 0 0;
+  padding: 0 15px;
 }
 .mainContainer .header .header_container {
   border: solid white;
   border-width: 1px 0;
   flex: 0 1 auto;
+  min-height: 200px;
   -moz-align-items: center;
   -webkit-align-items: center;
   -ms-align-items: center;
@@ -235,6 +313,7 @@ html {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  font-size: 1.1em;
   flex: 0 0 auto;
   padding: 10px;
   border: 1px solid white;
@@ -243,6 +322,75 @@ html {
 .mainContainer .header .contacts .contactElement {
   padding: 10px;
   flex: 0 1 auto;
+}
+.mainContainer .header .navigation {
+  flex: 0 1 auto;
+  position: relative;
+  margin-top: calc(4.5rem);
+}
+.mainContainer .header .navigation:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(-4.5rem);
+  left: calc(50%);
+  width: 1px;
+  height: calc(4.5rem);
+  background: #ffffff;
+}
+.mainContainer .header .navigation .list {
+  flex: 0 1 auto;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style: none;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.mainContainer .header .navigation .list .listItem {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 40px;
+  font-size: 1.1em;
+  width: 100%;
+  list-style-type: none;
+  text-transform: uppercase;
+  border-left: 1px solid white;
+}
+.mainContainer .header .navigation .list .listItem:last-of-type .listItem {
+  border-left: none;
+}
+.mainContainer .header .navigation .list .listItem:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+.mainContainer .header .navigation .list .link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.9em;
 }
 #bg {
   -moz-transform: scale(1);

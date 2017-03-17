@@ -1,24 +1,25 @@
 .startPage {
     .flex;
-    .flex-row;
+    .flex-column;
     .flexAlignItems(stretch);
+    .flexJustifyItems(center);
     font-size: 1em;
-    height: 200px;
-    max-height: 200px;
+    height: 400px;
     color: white;
 
     .logo {
-        font-size: 2em;
+        font-size: 2.1em;
         .flex;
         .flex-column;
         flex: 0 0 auto;
-        padding: 0 50px 0 0;
+        padding: 0 15px;
     }
 
     .header_container {
         border: solid white;
         border-width: 1px 0;
         flex: 0 1 auto;
+        min-height: 200px;
         .flexAlignItems(center);
     }
 
@@ -26,6 +27,7 @@
         .flex;
         .flex-column;
         .flexAlignItems(center);
+        font-size: 1.1em;
         flex: 0 0 auto;
         padding: 10px;
         border: 1px solid white;
@@ -34,6 +36,65 @@
         .contactElement {
             padding: 10px;
             flex: 0 1 auto;
+        }
+    }
+
+    .navigation {
+        flex: 0 1 auto;
+        position: relative;
+        margin-top: calc(4.5rem);
+        //.flexAlignItems(center);
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(-3.5rem - 1px);
+            left: calc(50%);
+            width: 1px;
+            height: calc(3.5rem + 1px);
+            background: #ffffff;
+        }
+
+        .list {
+            flex: 0 1 auto;
+            .flexJustifyItems(space-between);
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            list-style: none;
+            border: 1px solid white;
+            border-radius: 4px;
+
+            .listItem {
+                .flex;
+                .flex-column;
+                .flexAlignItems(center);
+                .flexJustifyItems(center);
+                text-align: center;
+                color: white;
+                height: 40px;
+                font-size: 1.1em;
+                width: 100%;
+                list-style-type: none;
+                text-transform: uppercase;
+                border-left: 1px solid white;
+
+                &:last-of-type .listItem {
+                    border-left: none;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.075);
+                }
+            }
+            .link {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: inherit;
+                line-height: 1.9em;
+            }
         }
     }
 }
