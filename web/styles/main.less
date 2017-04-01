@@ -1,6 +1,9 @@
 @import "./mixins.less";
 @import "./startPage.less";
+@import "./pageHeader.less";
 @import "./background.less";
+@import "./about.less";
+@import "./gelery.less";
 
 body, html {
     width: 100%;
@@ -29,6 +32,22 @@ body, html {
 
     .header {
         .startPage;
+    }
+
+    &.typicalPage {
+        .flexJustifyItems(start);
+
+        .content {
+            .flex;
+            .flexDirection(column);
+            .flexAlignItems(center);
+            .flexJustifyItems(center);
+            color: white;
+            width: 100%;
+            margin: 1rem;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
     }
 }
 

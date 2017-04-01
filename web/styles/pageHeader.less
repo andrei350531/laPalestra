@@ -1,0 +1,53 @@
+
+.headerBar {
+    .flex;
+    .flex-column;
+    .flexAlignItems(center);
+    .flexJustifyItems(center);
+    flex: 0 1 auto;
+    font-size: 1em;
+    color: white;
+
+
+    .list {
+        flex: 0 1 auto;
+        .flexJustifyItems(space-between);
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        list-style: none;
+        border: 1px solid white;
+        border-radius: 4px;
+
+        .listItem {
+            .flex;
+            .flex-column;
+            .flexAlignItems(center);
+            .flexJustifyItems(center);
+            text-align: center;
+            color: white;
+            height: 40px;
+            font-size: 1.1em;
+            width: 100%;
+            padding: 0 10px;
+            list-style-type: none;
+            text-transform: uppercase;
+            border-left: 1px solid white;
+
+            &:last-of-type .listItem {
+                border-left: none;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.075);
+            }
+        }
+        .link {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            line-height: 1.9em;
+        }
+    }
+}

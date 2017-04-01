@@ -6,6 +6,9 @@
   flex: 1 1 auto;
   box-sizing: border-box;
 }
+.noFlexGrow {
+  flex-grow: 0;
+}
 .flex-row {
   -moz-flex-direction: row;
   -webkit-flex-direction: row;
@@ -160,6 +163,84 @@
   color: inherit;
   line-height: 1.9em;
 }
+.headerBar {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  font-size: 1em;
+  color: white;
+}
+.headerBar .list {
+  flex: 0 1 auto;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style: none;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.headerBar .list .listItem {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 40px;
+  font-size: 1.1em;
+  width: 100%;
+  padding: 0 10px;
+  list-style-type: none;
+  text-transform: uppercase;
+  border-left: 1px solid white;
+}
+.headerBar .list .listItem:last-of-type .listItem {
+  border-left: none;
+}
+.headerBar .list .listItem:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+.headerBar .list .link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.9em;
+}
 .backgroundClass {
   -moz-transform: scale(1);
   -webkit-transform: scale(1);
@@ -212,6 +293,46 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+}
+.aboutPage .infoAbout {
+  width: 100%;
+  font-size: 1.5em;
+}
+.aboutPage .logo,
+.aboutPage .team {
+  width: 50%;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+}
+.aboutPage .logo {
+  border-right: 1px solid white;
+}
+.aboutPage .team {
+  font-size: 0.8em;
+}
+.geleryPage .geleryItem {
+  font-size: 1.5em;
+  width: 100%;
+  padding: 10px;
+  height: 200px;
+  box-shadow: 0 0 2px 2px black;
+}
+.geleryPage .geleryItem .photo {
+  width: 50%;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: round;
+}
+.geleryPage .geleryItem .text {
+  width: 100%;
+  padding: 20px;
+  font: 2em;
 }
 body,
 html {
@@ -391,6 +512,37 @@ html {
   text-decoration: none;
   color: inherit;
   line-height: 1.9em;
+}
+.mainContainer.typicalPage {
+  -moz-justify-content: start;
+  -webkit-justify-content: start;
+  -ms-justify-content: start;
+  justify-content: start;
+}
+.mainContainer.typicalPage .content {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin: 1rem;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 #bg {
   -moz-transform: scale(1);
