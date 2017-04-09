@@ -43,6 +43,7 @@
   font-size: 1em;
   height: 400px;
   color: white;
+  min-width: 700px;
 }
 .startPage .logo {
   font-size: 2.1em;
@@ -56,8 +57,13 @@
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
   flex: 0 0 auto;
   padding: 0 15px;
+  width: 50%;
 }
 .startPage .header_container {
   border: solid white;
@@ -68,6 +74,7 @@
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.28);
 }
 .startPage .contacts {
   display: -moz-flex;
@@ -97,13 +104,13 @@
 .startPage .navigation {
   flex: 0 1 auto;
   position: relative;
-  margin-top: calc(4.5rem);
+  margin-bottom: calc(4.5rem);
 }
-.startPage .navigation:before {
+.startPage .navigation:after {
   content: '';
   display: block;
   position: absolute;
-  top: calc(-4.5rem);
+  top: calc(2.1rem);
   left: calc(50%);
   width: 1px;
   height: calc(4.5rem);
@@ -273,7 +280,7 @@
   -webkit-transition-delay: 0.75s;
   -ms-transition-delay: 0.75s;
   transition-delay: 0.75s;
-  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url(../img/overlay.png);
+  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.4), rgba(19, 21, 25, 0.8)), url(../img/overlay.png);
   background-size: auto, 256px 256px;
   background-position: center, center;
   background-repeat: no-repeat, repeat;
@@ -288,7 +295,7 @@
   -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
   -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-  background-image: url("../img/bg.jpg");
+  background-image: url("../img/bg2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -316,23 +323,61 @@
 .aboutPage .team {
   font-size: 0.8em;
 }
-.geleryPage .geleryItem {
-  font-size: 1.5em;
-  width: 100%;
+.geleryPage .content {
+  border: none !important;
+}
+.geleryPage .gelery {
   padding: 10px;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+.geleryPage .geleryItem {
+  flex-grow: 0;
+  font-size: 1.5em;
+  width: 80%;
+  margin: 40px 0;
   height: 200px;
-  box-shadow: 0 0 2px 2px black;
+  box-shadow: 0 0 3px 1px #f6f6f6;
+  -moz-transition: height 100ms linear;
+  -webkit-transition: height 100ms linear;
+  -ms-transition: height 100ms linear;
+  transition: height 100ms linear;
 }
 .geleryPage .geleryItem .photo {
-  width: 50%;
-  background-image: url("../img/bg.jpg");
+  flex-grow: 0;
+  width: 30%;
+  -moz-transition: width 100ms linear;
+  -webkit-transition: width 100ms linear;
+  -ms-transition: width 100ms linear;
+  transition: width 100ms linear;
+}
+.geleryPage .geleryItem .photo .room {
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-repeat: round;
 }
 .geleryPage .geleryItem .text {
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
   width: 100%;
   padding: 20px;
   font: 2em;
+  background: rgba(0, 0, 0, 0.5);
+}
+.geleryPage .geleryItem:hover {
+  height: 400px;
+}
+.geleryPage .geleryItem:hover .photo {
+  width: 50%;
 }
 body,
 html {
@@ -393,6 +438,7 @@ html {
   font-size: 1em;
   height: 400px;
   color: white;
+  min-width: 700px;
 }
 .mainContainer .header .logo {
   font-size: 2.1em;
@@ -406,8 +452,13 @@ html {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
   flex: 0 0 auto;
   padding: 0 15px;
+  width: 50%;
 }
 .mainContainer .header .header_container {
   border: solid white;
@@ -418,6 +469,7 @@ html {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.28);
 }
 .mainContainer .header .contacts {
   display: -moz-flex;
@@ -447,13 +499,13 @@ html {
 .mainContainer .header .navigation {
   flex: 0 1 auto;
   position: relative;
-  margin-top: calc(4.5rem);
+  margin-bottom: calc(4.5rem);
 }
-.mainContainer .header .navigation:before {
+.mainContainer .header .navigation:after {
   content: '';
   display: block;
   position: absolute;
-  top: calc(-4.5rem);
+  top: calc(2.1rem);
   left: calc(50%);
   width: 1px;
   height: calc(4.5rem);
@@ -576,7 +628,7 @@ html {
   -webkit-transition-delay: 0.75s;
   -ms-transition-delay: 0.75s;
   transition-delay: 0.75s;
-  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url(../img/overlay.png);
+  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.4), rgba(19, 21, 25, 0.8)), url(../img/overlay.png);
   background-size: auto, 256px 256px;
   background-position: center, center;
   background-repeat: no-repeat, repeat;
@@ -591,7 +643,7 @@ html {
   -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
   -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-  background-image: url("../img/bg.jpg");
+  background-image: url("../img/bg2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
