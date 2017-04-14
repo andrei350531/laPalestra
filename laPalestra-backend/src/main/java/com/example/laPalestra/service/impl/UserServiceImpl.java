@@ -3,6 +3,7 @@ package com.example.laPalestra.service.impl;
 import com.example.laPalestra.entity.User;
 import com.example.laPalestra.service.api.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import static com.example.laPalestra.utils.EntityRowMapper.USER_ROW_MAPPER;
  * Created by anatol on 13.4.17.
  */
 @Service
+@Transactional
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
     @Override
     public User getById(Long id) {
@@ -47,6 +49,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-        return null;
+    String sql = SELECT + "User";
+        return getJdbcTemplate().query(sql, USER_ROW_MAPPER);
     }
 }

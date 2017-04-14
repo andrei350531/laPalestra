@@ -29,6 +29,7 @@ dependencies {
 	compile('commons-dbcp:commons-dbcp:1.4')
 	compile('org.springframework.boot:spring-boot-starter-social-facebook')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('com.h2database:h2')
 	compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.7.2'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
