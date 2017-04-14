@@ -12,11 +12,11 @@ public class Constants {
 
         public static final String USER_TABLE = " User (first_name, last_name, phone) ";
         public static final String GYM_TABLE = " Gym (maxSpaces, address) ";
-        public static final String SERVICE_TABLE = " Service (comment, price) ";
+        public static final String SERVICE_TABLE = " Service (description, price) ";
 
-        public static final String UPDATE_GYM = "UPDATE Gym SET maxSpaces = ?, address = ? WHERE id_hole =?";
-        public static final String UPDATE_USER = "UPDATE User SET first_name = ?, last_name = ?, phone = ? WHERE id_user =?";
-        public static final String UPDATE_SERVICE = "UPDATE Service SET comment = ?, price = ? WHERE id_service =?";
+        public static final String UPDATE_GYM = "UPDATE Gym SET maxSpaces = ?, address = ?" + WITH_ID;
+        public static final String UPDATE_USER = "UPDATE User SET first_name = ?, last_name = ?, phone = ?" + WITH_ID;
+        public static final String UPDATE_SERVICE = "UPDATE Service SET description = ?, price = ? " + WITH_ID;
 
     }
 }
