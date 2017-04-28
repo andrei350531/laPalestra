@@ -423,6 +423,81 @@
   height: 80px;
   background: #ffffff;
 }
+.servicesPage .content {
+  border: none !important;
+}
+.servicesPage .services .itemElement {
+  flex-grow: 0;
+  position: relative;
+  border: 1px solid white;
+  border-width: 1px 0;
+  padding: 50px 20px;
+  margin-top: 80px;
+  background: rgba(0, 0, 0, 0.28);
+}
+.servicesPage .services .itemElement.noPadding {
+  padding: 0;
+}
+.servicesPage .services .itemElement .name {
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  font-size: 1.7em;
+  text-align: center;
+  color: #fff2d7;
+}
+.servicesPage .services .itemElement .comment {
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  color: rgba(255, 231, 167, 0.8);
+}
+.servicesPage .services .itemElement .value {
+  flex-grow: 0;
+}
+.servicesPage .services .itemElement .icons {
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+.servicesPage .services .itemElement .icons .icon {
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  flex-grow: 0;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background: white;
+  opacity: 0.5;
+  margin: 0 10px;
+}
+.servicesPage .services .itemElement .icons .valueName {
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  color: white;
+  margin: 0 10px;
+}
+.servicesPage .services .itemElement:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -80px;
+  left: calc(50%);
+  width: 1px;
+  height: 80px;
+  background: #ffffff;
+}
 body,
 html {
   width: 100%;
