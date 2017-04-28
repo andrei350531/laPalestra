@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>La palestra</title>
+	<link rel="stylesheet" href="web/styles/main.css"/>
+    <!--<link rel="stylesheet/less" type="text/css" href="datepicker.less">
+    <script src="less.js" type="text/javascript"></script>-->
+	<script src="scripts/mainFile.js" type="text/javascript"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <style>
+        html,body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContainer typicalPage contactsPage">
+        <header class="headerBar flex flex-row">
+            <ul class="list flex flex-row">
+                <li class="listItem"><a class="link" href="/">Главная</a></li>
+                <li class="listItem"><a class="link" href=".gelery.html">Галерея</a></li>
+                <li class="listItem"><a class="link" href="#work">Услуги</a></li>
+                <li class="listItem"><a class="link" href="/contacts.html">Контакты</a></li>
+                <li class="listItem"><a class="link" href="/about.html">О нас</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="flex flex-column contacts noFlexGrow">
+               <div class="flex flex-column itemElement">
+                   <div class="flex flex-row noFlexGrow">
+                        <div class="flex flex-column leftSide">
+                            Контакты:
+                        </div>
+                        <div class="flex flex-column rightSide">
+                            <div class="flex flex-column number">
+                                +375-29-123-43-12
+                            </div>
+                            <div class="flex flex-column number">
+                                +375-29-312-43-12
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="flex flex-column itemElement">
+                   <div class="flex flex-row noFlexGrow">
+                        <div class="flex flex-column leftSide">
+                            Адрес:
+                        </div>
+                        <div class="flex flex-column rightSide">
+                            <div class="flex flex-column">
+                                г.Минск, улица Берсона, дом 16
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="flex flex-column itemElement noPadding">
+                   <div class="flex flex-row map" id="map"></div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div id="bg"></div>
+
+    <script>
+        ymaps.ready(init);
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                    center: [53.898103260671526, 27.545077489999986],
+                    zoom: 16
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
+
+            myMap.geoObjects
+                .add(new ymaps.Placemark([53.898103260671526, 27.545077489999986], {
+                    balloonContent: "La Palestra \"Здоровяк\""
+                }, {
+                    preset: 'islands#redSportIcon'
+                }))
+            }
+    </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ compile typescript
 */
 gulp.task("typescript", function() {
     var tsResult = tsProject.src().pipe(tsProject());
-    return tsResult.js.pipe(gulp.dest("web/scripts"));
+    return tsResult.js.pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/scripts"));
 });
 
 /*
@@ -22,7 +22,7 @@ Web server to test app
 gulp.task("webserver", function() {
     connect.server({
         livereload: false,
-        root: [".", "./web"]
+        root: [".", "./laPalestra-backend/src/main/resources/static"]
     });
 });
 
@@ -40,16 +40,16 @@ gulp.task("livereload", function() {
 compile less files
 */
 gulp.task("less", function() {
-    gulp.src("web/styles/main.less")
+    gulp.src("./laPalestra-backend/src/main/resources/static/web/styles/main.less")
     .pipe(less())
-    .pipe(gulp.dest("web/styles"));
+    .pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/styles"));
 });
 
 /*
 browserify
 */
 gulp.task("browserify", function() {
-    browserify("./web/scripts/main.js").bundle().pipe(source("mainFile.js")).pipe(gulp.dest("web/scripts"));
+    browserify("./laPalestra-backend/src/main/resources/static/web/scripts/main.js").bundle().pipe(source("mainFile.js")).pipe(gulp.dest("web/scripts"));
 });
 
 
@@ -57,8 +57,8 @@ gulp.task("browserify", function() {
 Watch typescript and less
 */
 gulp.task("watch", function() {
-    gulp.watch("web/styles/*.less", ["less"]);
-    gulp.watch("web/**/*.ts", ["typescript", "browserify"]);
+    gulp.watch("./laPalestra-backend/src/main/resources/static/web/styles/*.less", ["less"]);
+    gulp.watch("./laPalestra-backend/src/main/resources/static/web/**/*.ts", ["typescript", "browserify"]);
 })
 
 /*

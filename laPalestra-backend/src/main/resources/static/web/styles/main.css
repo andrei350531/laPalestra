@@ -304,6 +304,10 @@
 .aboutPage .infoAbout {
   width: 100%;
   font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.28);
+}
+.aboutPage .content {
+  border: none !important;
 }
 .aboutPage .logo,
 .aboutPage .team {
@@ -318,7 +322,7 @@
   justify-content: center;
 }
 .aboutPage .logo {
-  border-right: 1px solid white;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
 }
 .aboutPage .team {
   font-size: 0.8em;
@@ -378,6 +382,46 @@
 }
 .geleryPage .geleryItem:hover .photo {
   width: 50%;
+}
+.contactsPage .content {
+  border: none !important;
+}
+.contactsPage .contacts .itemElement {
+  position: relative;
+  border: 1px solid white;
+  border-width: 1px 0;
+  padding: 20px;
+  margin-top: 80px;
+  background: rgba(0, 0, 0, 0.28);
+}
+.contactsPage .contacts .itemElement.noPadding {
+  padding: 0;
+}
+.contactsPage .contacts .itemElement .leftSide,
+.contactsPage .contacts .itemElement .rightSide {
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  padding: 20px 30px;
+}
+.contactsPage .contacts .itemElement .number {
+  padding: 10px 0;
+}
+.contactsPage .contacts .itemElement .map {
+  height: 500px;
+  width: 100%;
+  max-width: 800px;
+}
+.contactsPage .contacts .itemElement:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -80px;
+  left: calc(50%);
+  width: 1px;
+  height: 80px;
+  background: #ffffff;
 }
 body,
 html {
