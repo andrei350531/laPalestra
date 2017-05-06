@@ -14,7 +14,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "files": [
-      "./typings/tsd.d.ts",
-    "./laPalestra-backend/src/main/resources/static/web/scripts/*.ts"
+    //"./typings/tsd.d.ts",
+    "./laPalestra-backend/src/main/resources/static/web/scripts"
   ]
 }
