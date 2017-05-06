@@ -26,14 +26,15 @@ class MainPage {
         this.mainPage.appendChild(this.content);
         this.extraClasses = [];
     }
-    private clearState(classes: string[]) {
+    private clearPage(classes: string[]) {
         RemoveClass(this.mainPage, classes);
         this.content.innerHTML = "";
     }
-    public setState() {
-        this.clearState(this.extraClasses);
-        this.extraClasses = [];
-
+    public setPage(pageClasses: string[], pageNode: HTMLElement) {
+        this.clearPage(this.extraClasses);
+        this.extraClasses = pageClasses;
+        AddClass(this.mainPage, this.extraClasses);
+        this.content.appendChild(pageNode);
     }
     get element() {
         return this.mainPage;
