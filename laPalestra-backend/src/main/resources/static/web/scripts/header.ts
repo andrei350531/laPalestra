@@ -4,12 +4,12 @@ const   headerClass = ["headerBar"],
         otherHeaderClasses = ["flex", "flex-row"],
         listClasses = ["list", "flex", "flex-row"];
 
-interface IHeaderItem {
+export interface IHeaderItem {
     pageName: string;
     link: string;
 }
 
-class Header {
+export default class Header {
     private headerNode: HTMLHeadElement;
     private headerList: HTMLUListElement;
     constructor() {
