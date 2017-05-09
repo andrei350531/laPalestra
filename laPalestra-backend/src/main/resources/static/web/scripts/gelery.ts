@@ -67,5 +67,7 @@ class GeleryPage implements IPage {
         this.clearMainElement();
         this.mainElement.innerHTML = this.getPageContent(defData);
     }
-    public blur() {}
+    public blur;
 }
+
+laPalestra.knownPage["gelery"] = GeleryPage;

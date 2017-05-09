@@ -10,7 +10,7 @@ const   mainPageClass = "mainContainer",
             { pageName: "О нас", link: "/about.html"}
         ];
 
-class MainPage {
+export default class MainPage {
     private mainPage: HTMLDivElement;
     private content: HTMLDivElement;
     private header: Header;

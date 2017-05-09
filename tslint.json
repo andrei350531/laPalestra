@@ -1,4 +1,5 @@
 {
+    "defaultSeverity": "warning",
     "rules": {
         "class-name": true,
         "indent": [true, "spaces"],
@@ -6,18 +7,28 @@
         "no-eval": true,
         "no-arg": true,
         "curly": true,
-        "no-unreachable": true,
+        //"no-unreachable": true,
         "no-internal-module": true,
         "no-trailing-whitespace": true,
         "no-var-keyword": false,
-        "no-unused-variable": true,
+        "no-unused-variable": [true, {"ignore-pattern": "^_"}],
         "no-shadowed-variable": true,
+        "no-debugger": true,
         "no-construct": true,
+        "no-duplicate-super": true,
+        "no-empty": true,
+        "switch-default": true,
+        "use-isnan": true,
+        "no-sparse-arrays": true,
+        "no-unsafe-finally": true,
+        "max-classes-per-file": [true, 5],
+        "cyclomatic-complexity": [true, 25], //the number probably should be smaller, let's just check it
         "one-line": [true, "check-open-brace", "check-whitespace"],
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
         "quotemark": [true, "double"],
         "semicolon": [true, "always"],
         "array-type": [true, "array"],
+        "no-string-throw": true,
         "interface-name": [true, "always-prefix"],
         "triple-equals": true,
         "typedef-whitespace": [true, {
@@ -28,8 +39,7 @@
             "variable-declaration": "nospace"
         }],
         "variable-name": [true, "ban-keywords", "check-format"],
-        "whitespace": [
-            true,
+        "whitespace": [true,
             "check-branch",
             "check-decl",
             "check-operator",

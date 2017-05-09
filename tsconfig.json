@@ -9,12 +9,13 @@
     "module": "es6",
     "noImplicitAny": false,
     "allowJs": false,
-    "noResolve": true,
     "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true
   },
   "files": [
-    //"./typings/tsd.d.ts",
+    "./laPalestra-backend/src/main/resources/static/web/scripts/globalThings.d.ts",
     "./laPalestra-backend/src/main/resources/static/web/scripts"
   ]
 }
