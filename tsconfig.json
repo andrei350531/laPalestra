@@ -5,8 +5,8 @@
   ],
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "es2016",
-    "module": "es6",
+    "target": "es2015",
+    "module": "commonjs",
     "noImplicitAny": false,
     "allowJs": false,
     "strictNullChecks": true,
@@ -14,7 +14,7 @@
     "allowUnreachableCode": false,
     "noUnusedLocals": true
   },
-  "files": [
+  "include": [
     "./laPalestra-backend/src/main/resources/static/web/scripts/globalThings.d.ts",
     "./laPalestra-backend/src/main/resources/static/web/scripts"
   ]

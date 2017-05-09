@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/andrei350531/laPalestra#readme",
   "devDependencies": {
+    "babelify": "^7.3.0",
     "browserify": "^14.1.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",

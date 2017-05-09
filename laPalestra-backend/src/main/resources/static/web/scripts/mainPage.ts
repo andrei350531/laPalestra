@@ -2,6 +2,7 @@ import { CreateElement, AddClass, RemoveClass } from "./vanilla";
 import Header, { IHeaderItem } from "./header";
 
 const   mainPageClass = "mainContainer",
+        contentClass = "content",
         headerItems: IHeaderItem[] = [
             { pageName: "Главная", link: "/"},
             { pageName: "Галерея", link: "/gelery.html"},
@@ -19,9 +20,10 @@ export default class MainPage {
         this.mainPage = CreateElement<HTMLDivElement>("div");
         AddClass(this.mainPage, [mainPageClass]);
         this.content = CreateElement<HTMLDivElement>("div");
+        AddClass(this.content, [contentClass]);
         this.header = new Header();
         this.header.fillHeader(headerItems);
-        // append elements
+        // append elements 
         this.mainPage.appendChild(this.header.element);
         this.mainPage.appendChild(this.content);
         this.extraClasses = [];

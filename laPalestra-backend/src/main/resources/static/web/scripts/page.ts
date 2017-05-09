@@ -23,9 +23,11 @@ export default class Page {
         body.appendChild(this.background);
     }
     public changePage(pageName: string) {
+        let requieredPage = this.pages[pageName],
+            knownPage = laPalestra.knownPage[pageName];
         this.activePage && this.activePage.blur();
-        if (!this.pages[pageName] && laPalestra.knownPage[pageName] && typeof laPalestra.knownPage[pageName] === "function") {
-            this.pages[pageName] = new laPalestra.knownPage[pageName];
+        if (!requieredPage && knownPage && typeof knownPage === "function") {
+            this.pages[pageName] = new knownPage();
         }
         let newPage = this.pages[pageName];
         if (newPage) {

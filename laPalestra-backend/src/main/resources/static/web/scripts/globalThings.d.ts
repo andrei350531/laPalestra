@@ -1,7 +1,8 @@
 
 interface IPage {
     pageTitle: string;
-    pageClasses: string[],
+    pageClasses: string[];
+    name: string;
     mainElement: HTMLElement;
     focus: () => void;
     blur: () => void;
@@ -11,10 +12,10 @@ interface IPage {
 interface ILaPalestra {
     page: any;
     knownPage: {
-        [key: string]: {
+        [key: string]: ({
             prototype: IPage;
             new(): IPage;
-        } | undefined
+        }) | undefined
     }
 }
 

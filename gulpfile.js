@@ -4,7 +4,7 @@ var watch = require("gulp-watch");
 var browserify = require("browserify");
 var source = require("vinyl-source-stream");
 var less = require("gulp-less");
-var tsProject = ts.createProject("tsconfig.json");
+var tsProject = ts.createProject("./tsconfig.json");
 var connect = require("gulp-connect");
 
 
@@ -12,7 +12,7 @@ var connect = require("gulp-connect");
 compile typescript
 */
 gulp.task("typescript", function() {
-    var tsResult = tsProject.src().pipe(tsProject());
+    var tsResult = gulp.src("./laPalestra-backend/src/main/resources/static/web/scripts/*.ts").pipe(tsProject());
     return tsResult.js.pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/scripts"));
 });
 
@@ -48,8 +48,8 @@ gulp.task("less", function() {
 /*
 browserify
 */
-gulp.task("browserify", function() {
-    browserify("./laPalestra-backend/src/main/resources/static/web/scripts/main.js").bundle().pipe(source("mainFile.js")).pipe(gulp.dest("web/scripts"));
+gulp.task("browserify", function(stream) {
+    browserify("./laPalestra-backend/src/main/resources/static/web/scripts/laPalestra.js").bundle().pipe(source("mainFile.js")).pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/scripts"));
 });
 
 

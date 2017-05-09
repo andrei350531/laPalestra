@@ -28,7 +28,7 @@ const   defData: IGeleryElement[] = [
             }
         ];
 
-class GeleryPage implements IPage {
+export default class GeleryPage implements IPage {
     private title: string = "Галерея";
     private classes: ["geleryPage"];
     private mainNode: HTMLDivElement;
@@ -38,6 +38,9 @@ class GeleryPage implements IPage {
     }
     get pageClasses() {
         return this.classes;
+    }
+    get name() {
+        return "gelery";
     }
     get pageTitle() {
         return this.title;
@@ -69,5 +72,3 @@ class GeleryPage implements IPage {
     }
     public blur;
 }
-
-laPalestra.knownPage["gelery"] = GeleryPage;
