@@ -30,11 +30,11 @@ const   defData: IGeleryElement[] = [
 
 export default class GeleryPage implements IPage {
     private title: string = "Галерея";
-    private classes: ["geleryPage"];
+    private classes: string[] = ["typicalPage", "geleryPage"];
     private mainNode: HTMLDivElement;
     constructor() {
         this.mainNode = CreateElement<HTMLDivElement>("div");
-        AddClass(this.mainNode, ["flex", "flex-row", "gelery"]);
+        AddClass(this.mainNode, ["flex", "flex-column", "gelery"]);
     }
     get pageClasses() {
         return this.classes;
@@ -70,5 +70,7 @@ export default class GeleryPage implements IPage {
         this.clearMainElement();
         this.mainElement.innerHTML = this.getPageContent(defData);
     }
-    public blur;
+    public blur() {
+        //asdasd
+    }
 }

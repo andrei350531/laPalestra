@@ -24,6 +24,7 @@
     "gulp-less": "^3.3.0",
     "gulp-typescript": "^3.1.5",
     "gulp-watch": "^4.3.11",
+    "run-sequence": "^1.2.2",
     "tsd": "^0.6.5",
     "tslint": "~5.2.0",
     "typescript": "^2.2.1",

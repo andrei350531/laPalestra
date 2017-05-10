@@ -2,6 +2,7 @@ var gulp = require("gulp");
 var ts = require("gulp-typescript");
 var watch = require("gulp-watch");
 var browserify = require("browserify");
+var runSequence = require('run-sequence');
 var source = require("vinyl-source-stream");
 var less = require("gulp-less");
 var tsProject = ts.createProject("./tsconfig.json");
@@ -44,21 +45,22 @@ gulp.task("less", function() {
     .pipe(less())
     .pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/styles"));
 });
-
+ 
 /*
 browserify
 */
 gulp.task("browserify", function(stream) {
-    browserify("./laPalestra-backend/src/main/resources/static/web/scripts/laPalestra.js").bundle().pipe(source("mainFile.js")).pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/scripts"));
+    return browserify("./laPalestra-backend/src/main/resources/static/web/scripts/laPalestra.js").bundle().pipe(source("mainFile.js")).pipe(gulp.dest("./laPalestra-backend/src/main/resources/static/web/scripts"));
 });
-
 
 /*
 Watch typescript and less
 */
 gulp.task("watch", function() {
     gulp.watch("./laPalestra-backend/src/main/resources/static/web/styles/*.less", ["less"]);
-    gulp.watch("./laPalestra-backend/src/main/resources/static/web/**/*.ts", ["typescript", "browserify"]);
+    gulp.watch("./laPalestra-backend/src/main/resources/static/web/**/*.ts", () => {
+        runSequence("typescript", "browserify");
+    });
 })
 
 /*

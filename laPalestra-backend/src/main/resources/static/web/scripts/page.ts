@@ -2,9 +2,8 @@ import MainPage from "./mainPage";
 import { CreateElement } from "./vanilla";
 
 let body = document.body,
-    header = document.head;
-
-
+    header = document.head,
+    title = header.querySelector("title") as HTMLElement;
 
 interface IPagesHash {
     [key: string]: IPage | undefined;
@@ -34,7 +33,7 @@ export default class Page {
             this.mainPage.setPage(newPage.pageClasses, newPage.mainElement);
             this.activePage = newPage;
             newPage.focus();
-            header.title = `La Palestra | ${newPage.pageTitle}`;
+            title.innerText = `La Palestra | ${newPage.pageTitle}`;
         } else {
             throw new Error(`Page "${pageName}" does not exist :(`);
         }

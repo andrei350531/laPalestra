@@ -23,18 +23,18 @@ export default class MainPage {
         AddClass(this.content, [contentClass]);
         this.header = new Header();
         this.header.fillHeader(headerItems);
-        // append elements 
+        // append elements
         this.mainPage.appendChild(this.header.element);
         this.mainPage.appendChild(this.content);
         this.extraClasses = [];
     }
     private clearPage(classes: string[]) {
-        RemoveClass(this.mainPage, classes);
+        classes.length && RemoveClass(this.mainPage, classes);
         this.content.innerHTML = "";
     }
     public setPage(pageClasses: string[], pageNode: HTMLElement) {
         this.clearPage(this.extraClasses);
-        this.extraClasses = pageClasses;
+        this.extraClasses = pageClasses || [];
         AddClass(this.mainPage, this.extraClasses);
         this.content.appendChild(pageNode);
     }
