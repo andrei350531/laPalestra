@@ -1,5 +1,7 @@
 import MainPage from "./mainPage";
 import { CreateElement } from "./vanilla";
+import Navigator from "./navigator";
+import Logo from "./logo";
 
 let body = document.body,
     header = document.head,
@@ -13,9 +15,16 @@ export default class Page {
     private background: HTMLDivElement;
     private activePage: IPage | undefined;
     private pages: IPagesHash;
+    private navigator: Navigator;
     constructor() {
         this.pages = {};
         this.mainPage = new MainPage();
+        this.navigator = new Navigator();
+        this.navigator.addListener(() => {
+            debugger;
+            let pageName: string = location.hash.replace("#", "").trim() || Logo.name;
+            this.changePage(pageName);
+        });
         body.appendChild(this.mainPage.element);
         this.background = CreateElement<HTMLDivElement>("div");
         this.background.id = "bg";

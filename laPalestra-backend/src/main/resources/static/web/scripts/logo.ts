@@ -1,13 +1,14 @@
 import { CreateElement, AddClass } from "./vanilla";
 import { IHeaderItem } from "./header";
+import GeleryPage from "./gelery";
 
 const   headerItems: IHeaderItem[] = [
-            { pageName: "Галерея", link: "/gelery.html"},
-            { pageName: "Услуги", link: "/services.html"},
+            { pageName: "Галерея", link: `#${GeleryPage.name}`},
+            { pageName: "Услуги", link: "#services"},
             { pageName: "Контакты", link: "/contacts.html"},
             { pageName: "О нас", link: "/about.html"}
         ];
- 
+
 export default class Logo implements IPage {
     private title: string = "Главная";
     private classes: string[] = [];
