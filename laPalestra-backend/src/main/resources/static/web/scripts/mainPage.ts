@@ -2,15 +2,17 @@ import { CreateElement, AddClass, RemoveClass } from "./vanilla";
 import Header, { IHeaderItem } from "./header";
 import GeleryPage from "./gelery";
 import Logo from "./logo";
+import ServicePage from "./servicePage";
+import About from "./about";
 
 const   mainPageClass = "mainContainer",
         contentClass = "content",
         headerItems: IHeaderItem[] = [
             { pageName: "Главная", link: `#${Logo.name}`},
             { pageName: "Галерея", link: `#${GeleryPage.name}`},
-            { pageName: "Услуги", link: "/services.html"},
+            { pageName: "Услуги", link: `#${ServicePage.name}`},
             { pageName: "Контакты", link: "/contacts.html"},
-            { pageName: "О нас", link: "/about.html"}
+            { pageName: "О нас", link: `#${About.name}`}
         ];
 
 export default class MainPage {

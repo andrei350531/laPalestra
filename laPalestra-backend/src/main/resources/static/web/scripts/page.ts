@@ -21,7 +21,6 @@ export default class Page {
         this.mainPage = new MainPage();
         this.navigator = new Navigator();
         this.navigator.addListener(() => {
-            debugger;
             let pageName: string = location.hash.replace("#", "").trim() || Logo.name;
             this.changePage(pageName);
         });
