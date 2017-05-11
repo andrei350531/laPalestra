@@ -4,7 +4,7 @@ interface IPage {
     pageClasses: string[];
     name: string;
     mainElement: HTMLElement;
-    focus: () => void;
+    focus: (args?: any) => void;
     blur: () => void;
 }
 

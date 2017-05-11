@@ -5,10 +5,18 @@ let createElement = <T extends HTMLElement>(nodeName: string) => document.create
     },
     removeClass = (element: HTMLElement, classes: string[]) => {
         element.classList.remove(...classes);
+    },
+    show = (element: HTMLElement) => {
+        element.style.display = "";
+    },
+    hide = (element: HTMLElement) => {
+        element.style.display = "none";
     };
 
 export {
     createElement as CreateElement,
+    removeClass as RemoveClass,
     addClass as AddClass,
-    removeClass as RemoveClass
+    show as Show,
+    hide as Hide
 };

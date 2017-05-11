@@ -1,6 +1,7 @@
 import MainPage from "./mainPage";
 import { CreateElement } from "./vanilla";
 import Navigator from "./navigator";
+import Header from "./header";
 
 let body = document.body,
     header = document.head,
@@ -9,6 +10,10 @@ let body = document.body,
 interface IPagesHash {
     [key: string]: IPage | undefined;
 }
+export interface IPageArgs {
+    header: Header;
+}
+
 export default class Page {
     private mainPage: MainPage;
     private background: HTMLDivElement;
@@ -39,7 +44,9 @@ export default class Page {
         if (newPage) {
             this.mainPage.setPage(newPage.pageClasses, newPage.mainElement);
             this.activePage = newPage;
-            newPage.focus();
+            newPage.focus({
+                header: this.mainPage.header
+            });
             title.innerText = `La Palestra | ${newPage.pageTitle}`;
         } else {
             throw new Error(`Page "${pageName}" does not exist :(`);

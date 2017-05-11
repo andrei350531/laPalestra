@@ -1,9 +1,10 @@
-import { CreateElement, AddClass } from "./vanilla";
+import { CreateElement, AddClass, Show, Hide } from "./vanilla";
 import { IHeaderItem } from "./header";
 import GeleryPage from "./gelery";
 import ServicePage from "./servicePage";
 import About from "./about";
 import ContactsPage from "./contacts";
+import { IPageArgs } from "./page";
 
 const   headerItems: IHeaderItem[] = [
             { pageName: "Галерея", link: `#${GeleryPage.name}`},
@@ -79,11 +80,14 @@ export default class Logo implements IPage {
     get mainElement() {
         return this.mainNode;
     }
-    public focus() {
+    private args: IPageArgs | undefined;
+    public focus(args: IPageArgs) {
         this.clearPage();
+        this.args = args;
+        Hide(this.args.header.element);
         this.mainNode.innerHTML = this.getFullPage(headerItems);
     }
     public blur() {
-        // asdasd
+        this.args && Show(this.args.header.element);
     }
 }

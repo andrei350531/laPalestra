@@ -19,7 +19,7 @@ const   mainPageClass = "mainContainer",
 export default class MainPage {
     private mainPage: HTMLDivElement;
     private content: HTMLDivElement;
-    private header: Header;
+    public header: Header;
     private extraClasses: string[];
     constructor() {
         this.mainPage = CreateElement<HTMLDivElement>("div");
