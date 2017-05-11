@@ -21,3 +21,4 @@ interface ILaPalestra {
 
 
 declare var laPalestra: ILaPalestra;
+declare var ymaps: any;

@@ -4,6 +4,7 @@ import GeleryPage from "./gelery";
 import Logo from "./logo";
 import ServicePage from "./servicePage";
 import About from "./about";
+import ContactsPage from "./contacts";
 
 const   mainPageClass = "mainContainer",
         contentClass = "content",
@@ -11,7 +12,7 @@ const   mainPageClass = "mainContainer",
             { pageName: "Главная", link: `#${Logo.name}`},
             { pageName: "Галерея", link: `#${GeleryPage.name}`},
             { pageName: "Услуги", link: `#${ServicePage.name}`},
-            { pageName: "Контакты", link: "/contacts.html"},
+            { pageName: "Контакты", link: `#${ContactsPage.name}`},
             { pageName: "О нас", link: `#${About.name}`}
         ];
 
