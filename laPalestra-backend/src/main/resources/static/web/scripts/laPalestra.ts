@@ -5,6 +5,7 @@ import Logo from "./logo";
 import ServicePage from "./servicePage";
 import About from "./about";
 import ContactsPage from "./contacts";
+import LoginPage from "./login";
 
 
 var laPalestra: ILaPalestra = {
@@ -25,6 +26,7 @@ laPalestra.knownPage[Logo.name] = Logo;
 laPalestra.knownPage[ServicePage.name] = ServicePage;
 laPalestra.knownPage[About.name] = About;
 laPalestra.knownPage[ContactsPage.name] = ContactsPage;
+laPalestra.knownPage[LoginPage.name] = LoginPage;
 window["laPalestra"] = laPalestra;
 
 (<Page>laPalestra.page).changePage(laPalestra.getPageName());

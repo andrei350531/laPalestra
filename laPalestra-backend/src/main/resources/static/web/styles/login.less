@@ -1,0 +1,36 @@
+
+
+.loginPage {
+    .content {
+        border: none !important;
+    }
+
+    .login {
+        position: relative;
+        margin-top: 80px;
+        .form {
+            padding: 20px;
+            border: 1px solid white;
+            border-width: 1px 0;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 1em;
+        }
+
+        .label, .input, .button {
+            margin: 5px 0;
+        }
+        .button {
+            margin-top: 20px;
+        }
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -80px;
+            left: calc(50%);
+            width: 1px;
+            height: 80px;
+            background: #ffffff;
+        }
+    }
+}

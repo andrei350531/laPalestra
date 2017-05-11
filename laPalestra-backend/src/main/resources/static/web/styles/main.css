@@ -552,6 +552,38 @@
   height: 80px;
   background: #ffffff;
 }
+.loginPage .content {
+  border: none !important;
+}
+.loginPage .login {
+  position: relative;
+  margin-top: 80px;
+}
+.loginPage .login .form {
+  padding: 20px;
+  border: 1px solid white;
+  border-width: 1px 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+}
+.loginPage .login .label,
+.loginPage .login .input,
+.loginPage .login .button {
+  margin: 5px 0;
+}
+.loginPage .login .button {
+  margin-top: 20px;
+}
+.loginPage .login:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -80px;
+  left: calc(50%);
+  width: 1px;
+  height: 80px;
+  background: #ffffff;
+}
 body,
 html {
   width: 100%;
@@ -559,6 +591,27 @@ html {
   padding: 0;
   margin: 0;
   font-size: 20px;
+}
+input,
+button {
+  height: 30px;
+  font-size: 1.2em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px 5px;
+  outline: none;
+  color: #fff2d7;
+  line-height: 1.1em;
+}
+button {
+  background: rgba(0, 0, 0, 0.68);
+  border-color: #4a4a4a;
+  height: 40px;
+  cursor: pointer;
+}
+label {
+  font-size: 1.2em;
+  color: rgba(255, 231, 167, 0.8);
 }
 .mainContainer {
   display: -moz-flex;

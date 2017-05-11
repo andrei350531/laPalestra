@@ -4,6 +4,7 @@ import GeleryPage from "./gelery";
 import ServicePage from "./servicePage";
 import About from "./about";
 import ContactsPage from "./contacts";
+import LoginPage from "./login";
 import { IPageArgs } from "./page";
 
 const   headerItems: IHeaderItem[] = [
@@ -13,7 +14,7 @@ const   headerItems: IHeaderItem[] = [
             { pageName: "О нас", link: `#${About.name}`}
         ],
         authItems: IHeaderItem[] = [
-            { pageName: "Авторизация", link: `#login`},
+            { pageName: "Авторизация", link: `#${LoginPage.name}`},
             { pageName: "Регистрация", link: `#registration`}
         ];
 

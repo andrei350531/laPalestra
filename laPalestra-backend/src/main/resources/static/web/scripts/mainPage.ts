@@ -5,6 +5,7 @@ import Logo from "./logo";
 import ServicePage from "./servicePage";
 import About from "./about";
 import ContactsPage from "./contacts";
+import LoginPage from "./login";
 
 const   mainPageClass = "mainContainer",
         contentClass = "content",
@@ -16,7 +17,7 @@ const   mainPageClass = "mainContainer",
             { pageName: "О нас", link: `#${About.name}`}
         ],
         authItems: IHeaderItem[] = [
-            { pageName: "Авторизация", link: `#login`},
+            { pageName: "Авторизация", link: `#${LoginPage.name}`},
             { pageName: "Регистрация", link: `#registration`}
         ];
 
