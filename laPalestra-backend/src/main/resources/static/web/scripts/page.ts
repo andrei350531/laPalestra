@@ -1,7 +1,6 @@
 import MainPage from "./mainPage";
 import { CreateElement } from "./vanilla";
 import Navigator from "./navigator";
-import Logo from "./logo";
 
 let body = document.body,
     header = document.head,
@@ -21,7 +20,7 @@ export default class Page {
         this.mainPage = new MainPage();
         this.navigator = new Navigator();
         this.navigator.addListener(() => {
-            let pageName: string = location.hash.replace("#", "").trim() || Logo.name;
+            let pageName: string = laPalestra.getPageName();
             this.changePage(pageName);
         });
         body.appendChild(this.mainPage.element);

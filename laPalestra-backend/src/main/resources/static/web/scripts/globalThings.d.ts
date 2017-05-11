@@ -16,7 +16,8 @@ interface ILaPalestra {
             prototype: IPage;
             new(): IPage;
         }) | undefined
-    }
+    },
+    getPageName: () => string;
 }
 
 

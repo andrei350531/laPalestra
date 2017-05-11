@@ -9,7 +9,15 @@ import ContactsPage from "./contacts";
 
 var laPalestra: ILaPalestra = {
     page: new Page(),
-    knownPage: {}
+    knownPage: {},
+    getPageName: () => {
+        let name = location.hash.replace("#", "").trim();
+        if (!name) {
+            location.hash = "";
+            name = Logo.name;
+        }
+        return name;
+    }
 };
 
 laPalestra.knownPage[GeleryPage.name] = GeleryPage;
@@ -19,4 +27,4 @@ laPalestra.knownPage[About.name] = About;
 laPalestra.knownPage[ContactsPage.name] = ContactsPage;
 window["laPalestra"] = laPalestra;
 
-(<Page>laPalestra.page).changePage(Logo.name);
+(<Page>laPalestra.page).changePage(laPalestra.getPageName());
