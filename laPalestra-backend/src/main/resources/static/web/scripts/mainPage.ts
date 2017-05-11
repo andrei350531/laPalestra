@@ -14,6 +14,10 @@ const   mainPageClass = "mainContainer",
             { pageName: "Услуги", link: `#${ServicePage.name}`},
             { pageName: "Контакты", link: `#${ContactsPage.name}`},
             { pageName: "О нас", link: `#${About.name}`}
+        ],
+        authItems: IHeaderItem[] = [
+            { pageName: "Авторизация", link: `#login`},
+            { pageName: "Регистрация", link: `#registration`}
         ];
 
 export default class MainPage {
@@ -28,6 +32,7 @@ export default class MainPage {
         AddClass(this.content, [contentClass]);
         this.header = new Header();
         this.header.fillHeader(headerItems);
+        this.header.fillAuth(authItems);
         // append elements
         this.mainPage.appendChild(this.header.element);
         this.mainPage.appendChild(this.content);

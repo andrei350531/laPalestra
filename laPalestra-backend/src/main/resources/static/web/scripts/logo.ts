@@ -11,6 +11,10 @@ const   headerItems: IHeaderItem[] = [
             { pageName: "Услуги", link: `#${ServicePage.name}`},
             { pageName: "Контакты", link: `#${ContactsPage.name}`},
             { pageName: "О нас", link: `#${About.name}`}
+        ],
+        authItems: IHeaderItem[] = [
+            { pageName: "Авторизация", link: `#login`},
+            { pageName: "Регистрация", link: `#registration`}
         ];
 
 export default class Logo implements IPage {
@@ -21,8 +25,11 @@ export default class Logo implements IPage {
         this.mainNode = CreateElement<HTMLDivElement>("header");
         AddClass(this.mainNode, ["header"]);
     }
-    private getNavigation(headerData: IHeaderItem[]): string {
+    private getNavigation(headerData: IHeaderItem[], authItemsData: IHeaderItem[]): string {
         return `<nav class="navigation flex flex-column">
+            <ul class="list flex flex-row authNode">
+            ${authItemsData.reduce((prev, next) => prev + this.getListItem(next.pageName, next.link), "")}
+            </ul>
             <ul class="list flex flex-row">
             ${headerData.reduce((prev, next) => prev + this.getListItem(next.pageName, next.link), "")}
             </ul>
@@ -56,8 +63,8 @@ export default class Logo implements IPage {
                     ${this.getContacts()}
                 </div>`;
     }
-    private getFullPage(data: IHeaderItem[]): string {
-        return `${this.getNavigation(data)}
+    private getFullPage(data: IHeaderItem[], authItemData: IHeaderItem[]): string {
+        return `${this.getNavigation(data, authItemData)}
                 ${this.getHeaderContainer()}`;
     }
     private getListItem(name: string, link: string): string {
@@ -85,7 +92,7 @@ export default class Logo implements IPage {
         this.clearPage();
         this.args = args;
         Hide(this.args.header.element);
-        this.mainNode.innerHTML = this.getFullPage(headerItems);
+        this.mainNode.innerHTML = this.getFullPage(headerItems, authItems);
     }
     public blur() {
         this.args && Show(this.args.header.element);

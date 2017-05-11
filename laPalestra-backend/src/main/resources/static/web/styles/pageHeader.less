@@ -50,4 +50,31 @@
             line-height: 1.9em;
         }
     }
+
+    .authNode {
+        @margin: 50px;
+        @height: 30px;
+        @lineHeight: 25px;
+        position: relative;
+        font-size: 0.8em;
+        margin-bottom: @margin;
+        .listItem {
+            height: @height;
+            min-width: 160px;
+        }
+        .link {
+            line-height: 1.9em;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: @height;
+            left: calc(50%);
+            width: 1px;
+            height: @lineHeight;
+            background: #ffffff;
+        }
+    }
 }
