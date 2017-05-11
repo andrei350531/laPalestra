@@ -54,6 +54,6 @@ export default class AboutPage implements IPage {
         this.mainNode.innerHTML = this.getPageContent(defData);
     }
     public blur() {
-        // asdasd
+        // s
     }
 }
