@@ -1,4 +1,4 @@
-import { CreateElement, AddClass } from "./vanilla";
+import { CreateElement, AddClass, Show, Hide } from "./vanilla";
 
 export default class LoginPage implements IPage {
     private title: string = "Авторизация";
@@ -19,22 +19,62 @@ export default class LoginPage implements IPage {
     constructor() {
         this.mainNode = CreateElement<HTMLDivElement>("div");
         AddClass(this.mainNode, ["flex", "flex-column", "login"]);
+        this.form = CreateElement<HTMLFormElement>("form");
+        AddClass(this.form, ["flex", "flex-column", "noFlexGrow", "form"]);
+        this.mainNode.appendChild(this.form);
+        this.form.appendChild(this.getLabel("Логин:"));
+        this.login = this.getInput("login", "Введите логин");
+        this.form.appendChild(this.login);
+        this.form.appendChild(this.getLabel("Пароль:"));
+        this.pass = this.getInput("pass", "Введите пароль", "password");
+        this.form.appendChild(this.pass);
+        this.error = this.getLabel("Неверный логин или пароль");
+        Hide(this.error);
+        this.form.appendChild(this.error);
+        this.button = this.getButton("button", "Войти");
+        this.form.appendChild(this.button);
     }
-    private getPageContent(): string {
-        return `<form class="flex flex-column noFlexGrow form">
-            <label class="label">Логин:</label>
-            <input class="input" type="text" name="login" placeholder="Введите логин"/>
-            <label class="label">Пароль:</label>
-            <input class="input" type="password" name="password" placeholder="Введите пароль"/>
-            <button class="button" onclick="return false">Войти</button>
-        </form>`;
+    private error: HTMLLabelElement;
+    private button: HTMLButtonElement;
+    private login: HTMLInputElement;
+    private pass: HTMLInputElement;
+    private form: HTMLFormElement;
+    private getInput(name: string, placeholder: string, type: string = "text"): HTMLInputElement {
+        let element = CreateElement<HTMLInputElement>("input");
+        element.name = name;
+        element.type = type;
+        element.placeholder = placeholder;
+        AddClass(element, ["input"]);
+        return element;
+    }
+    private getLabel(name: string): HTMLLabelElement {
+        let element = CreateElement<HTMLLabelElement>("label");
+        element.textContent = name;
+        AddClass(element, ["label"]);
+        return element;
+    }
+    private clickLogin() {
+        if (!this.login.value.trim() || !this.pass.value.trim()) {
+            Show(this.error);
+        }
+    }
+    private getButton(name: string, value: string): HTMLButtonElement {
+        let element = CreateElement<HTMLButtonElement>("button");
+        element.name = name;
+        element.textContent = value;
+        AddClass(element, ["button"]);
+        element.addEventListener("click", e => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.clickLogin();
+            return false;
+        });
+        return element;
     }
     public focus() {
-        if (!this.mainElement.innerHTML) {
-            this.mainNode.innerHTML = this.getPageContent();
-        }
-        let element = this.mainElement.querySelector("input");
-        element && element.focus();
+        this.login.value = "";
+        this.pass.value = "";
+        this.login.focus();
     }
     public blur() {
         // asda
