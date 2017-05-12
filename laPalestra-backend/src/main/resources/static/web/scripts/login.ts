@@ -56,11 +56,11 @@ export default class LoginPage implements IPage {
     private clickLogin() {
         if (!this.login.value.trim() || !this.pass.value.trim()) {
             Show(this.error);
+            this.pass.value = "";
         }
     }
     private getButton(name: string, value: string): HTMLButtonElement {
         let element = CreateElement<HTMLButtonElement>("button");
-        element.name = name;
         element.textContent = value;
         AddClass(element, ["button"]);
         element.addEventListener("click", e => {

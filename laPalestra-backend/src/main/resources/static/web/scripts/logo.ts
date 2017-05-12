@@ -5,6 +5,7 @@ import ServicePage from "./servicePage";
 import About from "./about";
 import ContactsPage from "./contacts";
 import LoginPage from "./login";
+import Registration from "./registration";
 import { IPageArgs } from "./page";
 
 const   headerItems: IHeaderItem[] = [
@@ -15,7 +16,7 @@ const   headerItems: IHeaderItem[] = [
         ],
         authItems: IHeaderItem[] = [
             { pageName: "Авторизация", link: `#${LoginPage.name}`},
-            { pageName: "Регистрация", link: `#registration`}
+            { pageName: "Регистрация", link: `#${Registration.name}`}
         ];
 
 export default class Logo implements IPage {

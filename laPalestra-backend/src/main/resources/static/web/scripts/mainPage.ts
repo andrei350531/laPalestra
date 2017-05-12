@@ -6,6 +6,7 @@ import ServicePage from "./servicePage";
 import About from "./about";
 import ContactsPage from "./contacts";
 import LoginPage from "./login";
+import Registration from "./registration";
 
 const   mainPageClass = "mainContainer",
         contentClass = "content",
@@ -18,7 +19,7 @@ const   mainPageClass = "mainContainer",
         ],
         authItems: IHeaderItem[] = [
             { pageName: "Авторизация", link: `#${LoginPage.name}`},
-            { pageName: "Регистрация", link: `#registration`}
+            { pageName: "Регистрация", link: `#${Registration.name}`}
         ];
 
 export default class MainPage {

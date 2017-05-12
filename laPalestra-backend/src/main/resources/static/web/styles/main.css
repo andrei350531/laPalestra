@@ -584,6 +584,38 @@
   height: 80px;
   background: #ffffff;
 }
+.registrationPage .content {
+  border: none !important;
+}
+.registrationPage .registration {
+  position: relative;
+  margin-top: 80px;
+}
+.registrationPage .registration .form {
+  padding: 20px;
+  border: 1px solid white;
+  border-width: 1px 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+}
+.registrationPage .registration .label,
+.registrationPage .registration .input,
+.registrationPage .registration .button {
+  margin: 5px 0;
+}
+.registrationPage .registration .button {
+  margin-top: 20px;
+}
+.registrationPage .registration:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -80px;
+  left: calc(50%);
+  width: 1px;
+  height: 80px;
+  background: #ffffff;
+}
 body,
 html {
   width: 100%;
