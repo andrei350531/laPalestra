@@ -8,6 +8,13 @@ interface IPage {
     blur: () => void;
 }
 
+interface IRegistrationData {
+    firstName: string;
+    lastName: string;
+    mail: string;
+    pass: string;
+}
+
 
 interface ILaPalestra {
     page: any;
@@ -17,6 +24,7 @@ interface ILaPalestra {
             new(): IPage;
         }) | undefined
     },
+    storage: any;
     getPageName: () => string;
 }
 

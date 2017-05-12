@@ -40,11 +40,21 @@ export default class MainPage {
         this.mainPage.appendChild(this.content);
         this.extraClasses = [];
     }
+    private getAuthData(user: IRegistrationData | undefined): IHeaderItem[] {
+        if (user) {
+            return [
+                { pageName: `${user.firstName}`, link: `#userPage`},
+                { pageName: "Выйти", link: `#logout`}
+            ];
+        }
+        return authItems;
+    }
     private clearPage(classes: string[]) {
         classes.length && RemoveClass(this.mainPage, classes);
         this.content.innerHTML = "";
     }
     public setPage(pageClasses: string[], pageNode: HTMLElement) {
+        this.header.fillAuth(this.getAuthData(laPalestra.storage.getActiveUser()));
         this.clearPage(this.extraClasses);
         this.extraClasses = pageClasses || [];
         AddClass(this.mainPage, this.extraClasses);

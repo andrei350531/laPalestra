@@ -1,11 +1,5 @@
 import { CreateElement, AddClass, Show, Hide } from "./vanilla";
-
-interface IRegistrationData {
-    firstName: string;
-    lastName: string;
-    mail: string;
-    pass: string;
-}
+import LoginPage from "./login";
 
 export default class Registration implements IPage {
     private title: string = "Регистрация";
@@ -72,7 +66,7 @@ export default class Registration implements IPage {
             this.lastName.focus();
             return false;
         }
-        if (!data.mail || !this.mailRegx.test(data.mail)) {
+        if (!data.mail || !this.mailRegx.test(data.mail) || !!laPalestra.storage.getUser(data.mail)) {
             this.mail.focus();
             return false;
         }
@@ -102,6 +96,8 @@ export default class Registration implements IPage {
             Show(this.error);
         } else {
             Hide(this.error);
+            laPalestra.storage.addUser(data);
+            laPalestra.page.changePage(LoginPage.name);
         }
     }
     private getButton(name: string, value: string): HTMLButtonElement {

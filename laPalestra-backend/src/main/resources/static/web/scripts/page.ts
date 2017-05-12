@@ -12,6 +12,7 @@ interface IPagesHash {
 }
 export interface IPageArgs {
     header: Header;
+    activeUser: IRegistrationData | undefined;
 }
 
 export default class Page {
@@ -42,10 +43,12 @@ export default class Page {
         }
         let newPage = this.pages[pageName];
         if (newPage) {
+            location.hash = `#${pageName}`;
             this.mainPage.setPage(newPage.pageClasses, newPage.mainElement);
             this.activePage = newPage;
             newPage.focus({
-                header: this.mainPage.header
+                header: this.mainPage.header,
+                activeUser: laPalestra.storage.getActiveUser()
             });
             title.innerText = `La Palestra | ${newPage.pageTitle}`;
         } else {

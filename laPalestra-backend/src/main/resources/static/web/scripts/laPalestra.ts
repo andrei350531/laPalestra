@@ -7,10 +7,13 @@ import About from "./about";
 import ContactsPage from "./contacts";
 import LoginPage from "./login";
 import Registration from "./registration";
+import Storage from "./storage";
+
 
 
 var laPalestra: ILaPalestra = {
     page: new Page(),
+    storage: new Storage(),
     knownPage: {},
     getPageName: () => {
         let name = location.hash.replace("#", "").trim();

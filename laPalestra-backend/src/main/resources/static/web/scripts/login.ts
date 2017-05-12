@@ -1,9 +1,14 @@
 import { CreateElement, AddClass, Show, Hide } from "./vanilla";
+import Storage from "./storage";
+import Logo from "./logo";
+import Page from "./page";
 
 export default class LoginPage implements IPage {
     private title: string = "Авторизация";
     private classes: string[] = ["typicalPage", "loginPage"];
     private mainNode: HTMLDivElement;
+    private storage: Storage;
+    private page: Page;
     get pageClasses() {
         return this.classes;
     }
@@ -17,6 +22,8 @@ export default class LoginPage implements IPage {
         return this.mainNode;
     }
     constructor() {
+        this.storage = laPalestra.storage;
+        this.page = laPalestra.page;
         this.mainNode = CreateElement<HTMLDivElement>("div");
         AddClass(this.mainNode, ["flex", "flex-column", "login"]);
         this.form = CreateElement<HTMLFormElement>("form");
@@ -54,9 +61,20 @@ export default class LoginPage implements IPage {
         return element;
     }
     private clickLogin() {
-        if (!this.login.value.trim() || !this.pass.value.trim()) {
+        let login = this.login.value.trim(),
+            pass = this.pass.value.trim();
+        if (!login || !pass) {
             Show(this.error);
             this.pass.value = "";
+        } else {
+            let user = this.storage.getUser(login);
+            if (user && user.mail === login && user.pass === pass) {
+                this.storage.setActiveUser(user.mail);
+                this.page.changePage(Logo.name);
+            } else {
+                Show(this.error);
+                this.pass.value = "";
+            }
         }
     }
     private getButton(name: string, value: string): HTMLButtonElement {
@@ -72,9 +90,13 @@ export default class LoginPage implements IPage {
         return element;
     }
     public focus() {
-        this.login.value = "";
-        this.pass.value = "";
-        this.login.focus();
+        if (!this.storage.getActiveUser()) {
+            this.login.value = "";
+            this.pass.value = "";
+            this.login.focus();
+        } else {
+            this.page.changePage(Logo.name);
+        }
     }
     public blur() {
         // asda

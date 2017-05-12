@@ -89,12 +89,21 @@ export default class Logo implements IPage {
     get mainElement() {
         return this.mainNode;
     }
+    private getAuthData(user: IRegistrationData | undefined): IHeaderItem[] {
+        if (user) {
+            return [
+                { pageName: `${user.firstName}`, link: `#userPage`},
+                { pageName: "Выйти", link: `#logout`}
+            ];
+        }
+        return authItems;
+    }
     private args: IPageArgs | undefined;
     public focus(args: IPageArgs) {
         this.clearPage();
         this.args = args;
         Hide(this.args.header.element);
-        this.mainNode.innerHTML = this.getFullPage(headerItems, authItems);
+        this.mainNode.innerHTML = this.getFullPage(headerItems, this.getAuthData(args.activeUser));
     }
     public blur() {
         this.args && Show(this.args.header.element);
