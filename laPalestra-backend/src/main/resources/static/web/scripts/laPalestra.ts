@@ -7,8 +7,8 @@ import About from "./about";
 import ContactsPage from "./contacts";
 import LoginPage from "./login";
 import Registration from "./registration";
+import Logout from "./logout";
 import Storage from "./storage";
-
 
 
 var laPalestra: ILaPalestra = {
@@ -32,6 +32,8 @@ laPalestra.knownPage[About.name] = About;
 laPalestra.knownPage[ContactsPage.name] = ContactsPage;
 laPalestra.knownPage[LoginPage.name] = LoginPage;
 laPalestra.knownPage[Registration.name] = Registration;
+laPalestra.knownPage[Logout.name] = Logout;
+ 
 window["laPalestra"] = laPalestra;
 
 (<Page>laPalestra.page).changePage(laPalestra.getPageName());

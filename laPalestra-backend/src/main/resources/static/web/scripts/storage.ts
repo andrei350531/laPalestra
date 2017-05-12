@@ -26,7 +26,6 @@ export default class Storage {
         return this.users && this.users[mail];
     }
     public addUser(user: IRegistrationData) {
-        debugger;
         if (this.users) {
             this.users[user.mail] = user;
             localStorage.setItem(this.userKey, JSON.stringify(this.users));

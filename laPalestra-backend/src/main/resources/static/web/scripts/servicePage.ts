@@ -73,11 +73,11 @@ export default class ServicePage implements IPage {
             <div class="flex flex-column valueName">${type.typeName}</div>
         </div>`;
     }
-    private createItem(item: IServiceItem): string {
+    private createItem(item: IServiceItem, showButtons: boolean): string {
         return `<div class="flex flex-column itemElement">
             <div class="flex flex-column">
                 <div class="flex flex-column name">
-                    ${item.name}
+                    ${item.name} ${showButtons ? `<button class="button">Купить</button>` : ``}
                 </div>
                 <div class="flex flex-column comment">
                     ${item.comment}
@@ -88,12 +88,12 @@ export default class ServicePage implements IPage {
             </div>
         </div>`;
     }
-    private getPageItems(items: IServiceItem[]): string {
-        return items.reduce((prev, next) => prev + this.createItem(next), "");
+    private getPageItems(items: IServiceItem[], showButtons: boolean): string {
+        return items.reduce((prev, next) => prev + this.createItem(next, showButtons), "");
     }
-    public focus() {
+    public focus(args) {
         this.clearPage();
-        this.mainNode.innerHTML = this.getPageItems(defData);
+        this.mainNode.innerHTML = this.getPageItems(defData, !!args.activeUser);
     }
     public blur() {
         // asdasd

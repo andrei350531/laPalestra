@@ -2,6 +2,7 @@ import MainPage from "./mainPage";
 import { CreateElement } from "./vanilla";
 import Navigator from "./navigator";
 import Header from "./header";
+import Logout from "./logout";
 
 let body = document.body,
     header = document.head,
@@ -42,8 +43,14 @@ export default class Page {
             this.pages[pageName] = new knownPage();
         }
         let newPage = this.pages[pageName];
+        if (pageName === Logout.name && this.activePage) {
+            laPalestra.storage.resetActiveUser();
+            newPage = this.activePage;
+        }
         if (newPage) {
-            location.hash = `#${pageName}`;
+            if (newPage !== this.activePage) {
+                location.hash = `#${pageName}`;
+            }
             this.mainPage.setPage(newPage.pageClasses, newPage.mainElement);
             this.activePage = newPage;
             newPage.focus({

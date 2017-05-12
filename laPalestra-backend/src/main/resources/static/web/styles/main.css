@@ -492,6 +492,11 @@
 .servicesPage .services .itemElement.noPadding {
   padding: 0;
 }
+.servicesPage .services .itemElement .button {
+  font-size: 0.7em;
+  margin: 10px 0;
+  background: rgba(105, 105, 105, 0.98);
+}
 .servicesPage .services .itemElement .name {
   -moz-align-items: center;
   -webkit-align-items: center;

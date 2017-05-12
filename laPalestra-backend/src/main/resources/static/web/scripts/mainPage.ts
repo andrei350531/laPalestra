@@ -7,6 +7,7 @@ import About from "./about";
 import ContactsPage from "./contacts";
 import LoginPage from "./login";
 import Registration from "./registration";
+import Logout from "./logout";
 
 const   mainPageClass = "mainContainer",
         contentClass = "content",
@@ -44,7 +45,7 @@ export default class MainPage {
         if (user) {
             return [
                 { pageName: `${user.firstName}`, link: `#userPage`},
-                { pageName: "Выйти", link: `#logout`}
+                { pageName: "Выйти", link: `#${Logout.name}`}
             ];
         }
         return authItems;
